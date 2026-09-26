@@ -1,0 +1,14 @@
+{
+  "name": "tox-signal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Clinical toxicology event monitor: what changed, and what is actually new?",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

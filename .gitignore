@@ -1,0 +1,8 @@
+node_modules/
+.env
+.env.*
+*.log
+.DS_Store
+# Never commit case material or patient data
+private/
+cases/

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TOX Signal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>TOX Signal</h1>
+      <p class="tagline">What changed, and what is actually new?</p>
+    </div>
+    <span id="asof" class="muted small"></span>
+  </header>
+
+  <div id="sample-banner" class="banner" role="alert" hidden></div>
+  <div id="rejected" class="banner warn" hidden></div>
+
+  <section class="controls" aria-label="Filters">
+    <div id="windows" class="segmented" role="group" aria-label="Time window"></div>
+    <fieldset><legend>Category</legend><div id="categories"></div></fieldset>
+    <fieldset><legend>Priority</legend><div id="priorities"></div></fieldset>
+  </section>
+
+  <section aria-labelledby="feeds-h">
+    <h2 id="feeds-h">Feed status</h2>
+    <ul id="feeds" class="feeds"></ul>
+  </section>
+
+  <section aria-labelledby="board-h">
+    <h2 id="board-h">Priority board</h2>
+    <p class="small"><strong id="index-label"></strong> — <span id="index-disclaimer" class="muted"></span></p>
+    <div id="board" class="board"></div>
+  </section>
+
+  <div class="split">
+    <section aria-labelledby="ledger-h">
+      <h2 id="ledger-h">Event ledger <span id="ledger-count" class="muted small"></span></h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Event date</th><th>Priority</th><th>Category</th><th>Item</th><th>Source</th></tr></thead>
+          <tbody id="ledger"></tbody>
+        </table>
+      </div>
+    </section>
+    <section aria-labelledby="detail-h">
+      <h2 id="detail-h">Signal detail</h2>
+      <div id="detail" class="detail"></div>
+    </section>
+  </div>
+
+  <div class="split">
+    <section aria-labelledby="trend-h">
+      <h2 id="trend-h">12-month activity (reviewed items per month)</h2>
+      <div id="trend" class="trend"></div>
+    </section>
+    <section aria-labelledby="queue-h">
+      <h2 id="queue-h">Review queue (<span id="queue-count">0</span>)</h2>
+      <p class="small muted">Automated findings wait here. Clinical, forensic, legal, or causation language is not shown until a person approves the item.</p>
+      <ul id="queue" class="queue"></ul>
+    </section>
+  </div>
+
+  <footer class="small muted">
+    Population-level signals do not identify a substance in an individual or establish causation in a patient.
+    Project lead: Alberto Augsten, PharmD, MS, BCPP, DABAT.
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
